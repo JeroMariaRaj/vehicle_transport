@@ -1,0 +1,68 @@
+﻿import sys
+import re
+
+with open('build.py', 'r', encoding='utf-8') as f:
+    content = f.read()
+
+# For login
+# Remove absolute buttons
+abs_buttons_login = '''        <div class="position-absolute top-0 end-0 p-4 z-3 d-flex gap-2">
+            <button class="btn btn-outline-secondary rounded-circle shadow-sm" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+            <button class="btn btn-outline-secondary rounded-circle shadow-sm" onclick="document.body.classList.toggle('dark-theme');" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        </div>'''
+content = content.replace(abs_buttons_login, '')
+
+# Add buttons under the card in login
+login_card_end = '''                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>'''
+login_card_end_new = '''                        </form>
+                    </div>
+
+                    <!-- Theme & RTL Toggles (Under Card) -->
+                    <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+                        <button class="btn btn-sm btn-outline-secondary fw-bold px-4 py-2 rounded-pill shadow-sm bg-white" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" title="Toggle RTL">RTL</button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle shadow-sm bg-white d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;" onclick="document.body.classList.toggle('dark-theme');" title="Toggle Theme"><i class="bi bi-moon-stars"></i></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>'''
+content = content.replace(login_card_end, login_card_end_new)
+
+
+# For register
+# Remove absolute buttons
+abs_buttons_register = '''        <div class="position-absolute top-0 end-0 p-4 z-3 d-flex gap-2">
+            <button class="btn btn-outline-secondary rounded-circle shadow-sm" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" title="Toggle RTL"><i class="bi bi-translate"></i></button>
+            <button class="btn btn-outline-secondary rounded-circle shadow-sm" onclick="document.body.classList.toggle('dark-theme');" title="Toggle Theme"><i class="bi bi-moon-stars-fill"></i></button>
+        </div>'''
+content = content.replace(abs_buttons_register, '')
+
+# Add buttons under the card in register
+register_card_end = '''                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>'''
+register_card_end_new = '''                        </form>
+                    </div>
+
+                    <!-- Theme & RTL Toggles (Under Card) -->
+                    <div class="d-flex justify-content-center align-items-center gap-3 mt-4">
+                        <button class="btn btn-sm btn-outline-secondary fw-bold px-4 py-2 rounded-pill shadow-sm bg-white" onclick="document.documentElement.dir = document.documentElement.dir === 'rtl' ? 'ltr' : 'rtl';" title="Toggle RTL">RTL</button>
+                        <button class="btn btn-sm btn-outline-secondary rounded-circle shadow-sm bg-white d-flex align-items-center justify-content-center" style="width: 38px; height: 38px;" onclick="document.body.classList.toggle('dark-theme');" title="Toggle Theme"><i class="bi bi-moon-stars"></i></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>'''
+# Note: since the string for register_card_end is the exact same as login_card_end, and we already replaced it, 
+# wait, if we replaced it globally it might have done both?
+# Let's check how many times it was replaced.

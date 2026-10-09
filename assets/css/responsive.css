@@ -1,0 +1,256 @@
+/* Responsive tweaks */
+
+
+
+
+
+
+
+
+
+/* ============================
+   GLOBAL OVERFLOW FIX
+   ============================ */
+
+
+
+
+
+
+
+
+/* ============================
+   GLOBAL OVERFLOW FIX
+   ============================ */
+
+html {
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   NAVBAR RESPONSIVE
+   ============================ */
+@media (max-width: 1199px) {
+    .navbar .collapse.navbar-collapse { display: none !important; }
+    .navbar .navbar-toggler { display: block !important; }
+}
+
+@media (min-width: 1200px) {
+    .navbar .navbar-toggler { display: none !important; }
+    .navbar .collapse.navbar-collapse { display: flex !important; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   HERO SECTION - ALL SIZES
+   ============================ */
+section {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   TABLET: 768px - 1199px
+   ============================ */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .display-3 { font-size: 2.5rem; }
+    .display-5 { font-size: 1.75rem; }
+    .section-padding { padding-top: 4rem; padding-bottom: 4rem; }
+    
+    .col-lg-4.col-md-6 { flex: 0 0 50%; max-width: 50%; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   MOBILE: 480px - 767px
+   ============================ */
+@media (max-width: 767px) {
+    .display-3 { font-size: 2rem; }
+    .display-5 { font-size: 1.5rem; }
+    .lead { font-size: 1rem; }
+    .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
+    
+    .navbar { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+    
+    .btn-lg { font-size: 0.95rem; padding: 0.6rem 1.5rem; }
+    
+    .col-lg-8, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    footer .col-lg-4, footer .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        text-align: left;
+    }
+    
+    footer .d-flex.gap-3 { justify-content: flex-start; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   SMALL MOBILE: 320px - 479px
+   ============================ */
+@media (max-width: 479px) {
+    .display-3 { font-size: 1.6rem; }
+    .display-5 { font-size: 1.25rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    .lead { font-size: 0.9rem; }
+    
+    .container { padding-left: 15px; padding-right: 15px; }
+    
+    .btn-lg { font-size: 0.85rem; padding: 0.5rem 1.2rem; }
+    
+    .d-flex.flex-wrap.justify-content-center.gap-3 {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .d-flex.flex-wrap.justify-content-center.gap-3 .btn {
+        width: 100%;
+    }
+    
+    .card { padding: 1rem !important; }
+    .p-md-5 { padding: 1rem !important; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   LARGE DESKTOP: 1440px+
+   ============================ */
+@media (min-width: 1440px) {
+    .container { max-width: 1320px; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   FULL HD+: 1920px+
+   ============================ */
+@media (min-width: 1920px) {
+    .container { max-width: 1400px; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   DASHBOARD RESPONSIVE
+   ============================ */
+@media (max-width: 991px) {
+    .p-md-5 { padding: 1.5rem !important; }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   TABLE RESPONSIVE
+   ============================ */
+.table-responsive {
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767px) {
+    .table th, .table td {
+        white-space: nowrap;
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   IMG RESPONSIVE FIXES
+   ============================ */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section img.position-absolute {
+    max-width: none;
+}
+
+
+
+
+
+
+
+
+
+/* ============================
+   OFFCANVAS MOBILE MENU
+   ============================ */
+.offcanvas {
+    max-width: 85vw;
+}
