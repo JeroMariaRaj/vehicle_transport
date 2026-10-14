@@ -38,7 +38,7 @@
 <body class="bg-white">
 <div class="main-wrapper d-flex flex-column min-vh-100" >
 
-    <section class="min-vh-100 bg-light d-flex align-items-center position-relative">
+    <section class="auth-page min-vh-100 bg-light d-flex align-items-center position-relative">
         <!-- Desktop RTL & Theme Toggles -->
         <div class="position-absolute top-0 end-0 p-4 z-3 d-none d-md-flex gap-3">
             <button class="btn btn-light rounded-circle shadow-sm d-flex align-items-center justify-content-center border" style="width: 40px; height: 40px;" onclick="document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir') === 'rtl' ? 'ltr' : 'rtl');" title="Toggle RTL">
@@ -49,10 +49,10 @@
             </button>
         </div>
 
-        <div class="container py-5">
+        <div class="container auth-container py-5">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-5">
-                    <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
+                    <div class="card auth-card border-0 shadow-lg rounded-4 p-4 p-md-5 bg-white">
                         <div class="text-center mb-4">
                             <a href="index.html" class="text-decoration-none d-inline-block mb-3">
                                 <div class="d-flex align-items-center justify-content-center mb-3"><img src="assets/images/logo_icon.png" alt="Company Logo" style="height: 48px; width: auto; object-fit: contain;" class="me-2"><span class="text-navy ms-2" style="font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.5px; font-size: 2.2rem;">Auto<span class="text-primary">Haul</span></span></div>
@@ -65,15 +65,15 @@
 
                         <form onsubmit="event.preventDefault(); new bootstrap.Modal(document.getElementById('loginSuccessModal')).show();">
                             <div class="mb-3 text-start">
-                                <label class="form-label fw-semibold text-dark">Email address</label>
-                                <input type="email" class="form-control form-control-lg bg-light border-0" placeholder="name@example.com" required>
+                                    <label for="loginEmail" class="form-label fw-semibold text-dark">Email address</label>
+                                <input type="email" id="loginEmail" name="email" autocomplete="email" class="form-control form-control-lg bg-light border-0" placeholder="name@example.com" required>
                             </div>
                             <div class="mb-4 text-start">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <label class="form-label fw-semibold text-dark">Password</label>
+                                    <label for="loginPassword" class="form-label fw-semibold text-dark">Password</label>
                                     <a href="forgot-password.html" class="text-decoration-none small text-primary fw-semibold">Forgot password?</a>
                                 </div>
-                                <input type="password" class="form-control form-control-lg bg-light border-0" placeholder="••••••••" required>
+                                <input type="password" id="loginPassword" name="password" autocomplete="current-password" class="form-control form-control-lg bg-light border-0" placeholder="Enter your password" required>
                             </div>
                             <div class="mb-4 form-check text-start">
                                 <input type="checkbox" class="form-check-input" id="rememberMe">

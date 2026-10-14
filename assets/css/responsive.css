@@ -254,3 +254,45 @@ section img.position-absolute {
 .offcanvas {
     max-width: 85vw;
 }
+
+/* Auth pages and narrow-screen home layout */
+.auth-page {
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 1.5rem 0;
+}
+.auth-container, .auth-card, .auth-card form { min-width: 0; width: 100%; }
+.auth-card { max-width: 100%; }
+.auth-card .form-control { min-width: 0; }
+@media (max-width: 575.98px) {
+    .auth-page { align-items: flex-start !important; }
+    .auth-container { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .auth-card { padding: 1.25rem !important; }
+    .auth-card h2 { font-size: clamp(1.35rem, 6vw, 1.75rem); }
+    .auth-card .form-control-lg { min-height: 48px; font-size: 1rem; }
+    .site-navbar-container { gap: .5rem; }
+    .site-navbar-container .navbar-brand { min-width: 0; }
+    .site-navbar-container .d-xl-none { gap: .35rem !important; }
+    .home-hero { padding: 5rem 0 3.5rem !important; min-height: 0 !important; }
+    .home-hero .container { padding-left: 1rem; padding-right: 1rem; }
+    .home-hero h1 { font-size: clamp(1.8rem, 8vw, 2.5rem); overflow-wrap: anywhere; }
+    .home-hero .badge { white-space: normal; max-width: 100%; }
+    .home-hero .btn { white-space: normal; }
+}
+@media (max-width: 575.98px) {
+    .auth-card .text-center > a > div { flex-direction: column; gap: .25rem; }
+    .auth-card .text-center > a > div img { max-height: 52px; width: auto; margin: 0 !important; }
+    .auth-card .text-center > a > div span { margin: 0 !important; font-size: clamp(1.6rem, 8vw, 2rem) !important; }
+}
+
+/* Keep the home page inside the mobile viewport. */
+@media (max-width: 767.98px) {
+    html, body { max-width: 100%; overflow-x: hidden !important; }
+    .main-wrapper { width: 100%; max-width: 100%; overflow-x: clip; }
+    .site-navbar-container { width: 100%; max-width: 100%; }
+    .site-navbar-container .navbar-brand { flex: 0 1 auto; overflow: hidden; }
+    .site-navbar-container .d-xl-none { flex: 0 0 auto; }
+    .home-hero, .home-hero > .container, .home-hero .row,
+    .home-hero [class*="col-"] { min-width: 0; max-width: 100%; }
+    .home-hero h1, .home-hero p { overflow-wrap: anywhere; }
+}
